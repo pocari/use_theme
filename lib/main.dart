@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Montserrat',
         textTheme: TextTheme(
           headline: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-          title: TextStyle(fontSize: 56.0, fontStyle: FontStyle.italic),
+          title: TextStyle(fontSize: 48.0, fontStyle: FontStyle.italic),
           body1: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
         ),
       ),
@@ -32,8 +32,13 @@ class MyHomePage extends StatelessWidget {
         title: Text('Use Theme'),
       ),
       body: Center(
-        child: Text('hello, world'),
-      ),
+          child: Container(
+        color: Theme.of(context).accentColor,
+        child: Text(
+          'Text with a backgroun color',
+          style: Theme.of(context).textTheme.title,
+        ),
+      )),
     );
   }
 }
