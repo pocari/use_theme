@@ -32,13 +32,24 @@ class MyHomePage extends StatelessWidget {
         title: Text('Use Theme'),
       ),
       body: Center(
-          child: Container(
-        color: Theme.of(context).accentColor,
-        child: Text(
-          'Text with a backgroun color',
-          style: Theme.of(context).textTheme.title,
+        child: Container(
+          color: Theme.of(context).accentColor,
+          child: Text(
+            'Text with a backgroun color',
+            style: Theme.of(context).textTheme.title,
+          ),
         ),
-      )),
+      ),
+      floatingActionButton: Theme(
+        data: Theme.of(context).copyWith(
+          colorScheme:
+              Theme.of(context).colorScheme.copyWith(secondary: Colors.yellow),
+        ),
+        child: FloatingActionButton(
+          onPressed: null,
+          child: Icon(Icons.add),
+        ),
+      ),
     );
   }
 }
